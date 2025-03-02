@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt 
+import pandas as pd
 from math import sqrt
 
 # 1.
@@ -79,4 +80,17 @@ ui = np.arange(6)
 # print(mat_circulante(ui))
 
 # 11.
-# def matrix(n, p):
+def matrix(n, p):
+    u = (1 + np.arange(n)).reshape(n, -1)
+    v = (1 + np.arange(p)).reshape(p, -1)
+    return 1 / (u @ v.T)
+
+# print(matrix(5,3))
+
+# 12. Construire les séries suivantes :
+# — La liste des prénoms donnés plus de 100000 fois
+# — L’effectif total des prénoms précédant SACHA
+s1 = pd.read_csv("data/s1.csv", index_col=0).squeeze("columns")
+
+print(s1[s1>100000].index)
+print(s1.loc[:"SACHA"].sum())
