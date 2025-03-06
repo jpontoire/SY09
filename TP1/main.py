@@ -108,8 +108,34 @@ d = (d + d.T) / 2
 np.fill_diagonal(d, 0)
 
 v_min = - d[d > 0].min()
-gammas = np.linspace(v_min, 1, 100)
+gammas = np.linspace(v_min, 2, 100)
 S_mins = [Smin(add_g(d, c)) for c in gammas]
 
-plt.plot(gammas, S_mins)
-plt.show()
+# plt.plot(gammas, S_mins)
+# plt.show()
+
+
+# 16.
+print(max(d[i, j] - d[i, k] - d[j, k]
+          for i in range(N)
+          for j in range(N)
+          for k in range(N)))
+# même valeur que celle où le signe change question d'avant
+
+# 17.
+# sur feuille
+
+# 18.
+
+
+# 19.
+# A pas proximité car une valeur négative
+# B pas similarité ou dissimilarité car diagonale pas nulle ou supérieure au reste
+# C dissimilarité car diagonale nulle
+# D pas symétrique
+# E similarité
+# F similarité
+# G X
+# H valeurs négatives
+
+# 20.
