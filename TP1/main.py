@@ -40,6 +40,7 @@ effectifs.drop(columns="Semestre", inplace=True)
 
 # 7.
 effectifs = effectifs.melt(id_vars=["Saison", "Année"], value_name="Effectif", var_name="UV")
+# effectifs = effectifs.loc[~pd.isna(effectifs.Effectif)]
 effectifs = effectifs.dropna()
 effectifs.Effectif = effectifs.Effectif.astype(int)
 # print(effectifs)
@@ -127,15 +128,3 @@ print(max(d[i, j] - d[i, k] - d[j, k]
 
 # 18.
 
-
-# 19.
-# A pas proximité car une valeur négative
-# B pas similarité ou dissimilarité car diagonale pas nulle ou supérieure au reste
-# C dissimilarité car diagonale nulle
-# D pas symétrique
-# E similarité
-# F similarité
-# G X
-# H valeurs négatives
-
-# 20.
