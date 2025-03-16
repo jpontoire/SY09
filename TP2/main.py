@@ -2,6 +2,13 @@ import seaborn as sns
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from math import sqrt, pi, exp
+from scipy.stats import norm
+import random
+
+norm.pdf()
+# loc = esperance
+
 
 titanic = sns.load_dataset("titanic")
 iris = sns.load_dataset("iris")
@@ -117,8 +124,16 @@ X = sy02.melt(id_vars=["Same"], value_vars=["Correcteur médian", "Correcteur fi
 # plt.show()
 
 # 19.
-sns.countplot(x="Correcteur", hue="Examen", data=X)
-plt.show()
+# sns.countplot(x="Correcteur", hue="Examen", data=X)
+# plt.show()
 # ça marche mais il faudrait renommer "Correcteur médian" en "Médian" et "Correcteur final" en "final"
 
-# 20.
+
+
+
+# -------------------------------------------------------------------------------------------------------------------------------------------
+
+def densité(x, ech, h):
+    
+    norm.pdf()
+
